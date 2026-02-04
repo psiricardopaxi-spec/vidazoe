@@ -384,4 +384,38 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><script>
+        // 1. Funcionalidad del Menú Móvil
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // 2. Envío del Formulario a tu WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Captura de datos
+            const nombre = document.querySelector('input[placeholder="Nombre Completo"]').value;
+            const correo = document.querySelector('input[placeholder="Correo Electrónico"]').value;
+            const tipo = document.querySelector('select').value;
+            const mensaje = document.querySelector('textarea').value;
+            
+            // Tu número configurado (Ricardo Paxi)
+            const miTelefono = "56944588858"; 
+
+            // Construcción del mensaje con formato para WhatsApp
+            const mensajeFinal = "Hola Ricardo, he visto tu web y me gustaría agendar una consulta:\n\n" +
+                                 "*Nombre:* " + nombre + "\n" +
+                                 "*Correo:* " + correo + "\n" +
+                                 "*Motivo:* " + tipo + "\n" +
+                                 "*Mensaje:* " + mensaje;
+
+            // Creación del enlace
+            const url = "https://wa.me/" + miTelefono + "?text=" + encodeURIComponent(mensajeFinal);
+            
+            // Abrir en pestaña nueva
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
