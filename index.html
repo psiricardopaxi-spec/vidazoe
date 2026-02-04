@@ -181,14 +181,14 @@
             gap: 30px;
         }
         .specialty-card {
-            background-color: var(--mindy-white);
-            border-radius: var(--radius);
-            padding: 40px 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            border-top: 4px solid var(--mindy-purple);
-        }
+    background-color: var(--mindy-white);
+    border-radius: 20px; /* Más redondeado como Mindy */
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.05); /* Sombra muy sutil */
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid #f0e6f5; /* Borde sutil para que no "flote" */
+}
         .specialty-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -279,7 +279,20 @@
             transform: scale(1.1);
             background-color: #128C7E;
         }
-    </style>
+    /* Esto hace que las secciones impares sean blancas y las pares tengan un tono suave */
+section:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+section:nth-of-type(even) {
+    background-color: #F8F4FF; /* Un lila muy sutil inspirado en Mindy */
+}
+
+/* Aseguramos que el Hero (la primera parte) destaque */
+.hero {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-bottom: 1px solid rgba(156, 39, 176, 0.05);
+}</style>
 </head>
 <body>
     <!-- HEADER -->
