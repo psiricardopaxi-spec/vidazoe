@@ -255,6 +255,29 @@
             }
             .hero h1 { font-size: 2.5rem; }
             .contact-container { grid-template-columns: 1fr; }
+        }/* BOTÓN FLOTANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
         }
     </style>
 </head>
@@ -417,5 +440,9 @@
             window.open(url, '_blank');
         });
     </script>
-</body>
+<a href="https://wa.me/56944588858?text=Hola%20Ricardo,%20vi%20tu%20página%20web%20y%20me%20gustaría%20más%20información." 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a></body>
 </html>
