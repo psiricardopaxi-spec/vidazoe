@@ -163,30 +163,6 @@
             box-shadow: var(--shadow);
         }
 
-        .profile-upload {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: var(--accent);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(255, 126, 95, 0.3);
-        }
-
-        .profile-upload i {
-            font-size: 1.2rem;
-        }
-
-        #profileInput {
-            display: none;
-        }
-
         .hero h1 {
             margin-bottom: 0.5rem;
         }
@@ -561,12 +537,8 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="profile-container">
-                <img id="profileImage" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Foto de perfil" class="profile-pic">
-                <div class="profile-upload" id="uploadBtn">
-                    <i class="fas fa-camera"></i>
-                    <input type="file" id="profileInput" accept="image/*">
-                </div>
-            </div>
+    <img src="https://drive.google.com/file/d/1e3Jptzym6DFMsqoGLFzZ9sENjJKr-PNy/view?usp=sharing" alt="Foto de perfil" class="profile-pic">
+</div>
             
             <h1>Psicología Clínica Especializada</h1>
             <p class="specialty">Infancia • Adolescencia • Adultez</p>
@@ -809,37 +781,6 @@
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
-        });
-        
-        // Subir foto de perfil
-        const profileInput = document.getElementById('profileInput');
-        const profileImage = document.getElementById('profileImage');
-        const uploadBtn = document.getElementById('uploadBtn');
-        
-        uploadBtn.addEventListener('click', () => {
-            profileInput.click();
-        });
-        
-        profileInput.addEventListener('change', function() {
-            if (this.files && this.files[0]) {
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    profileImage.src = e.target.result;
-                    // Guardar en localStorage para persistencia
-                    localStorage.setItem('profileImage', e.target.result);
-                }
-                
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-        
-        // Cargar imagen guardada al iniciar
-        window.addEventListener('load', function() {
-            const savedImage = localStorage.getItem('profileImage');
-            if (savedImage) {
-                profileImage.src = savedImage;
-            }
         });
         
         // Formulario de contacto
